@@ -1,0 +1,23 @@
+{
+  "name": "mini-game",
+  "version": "1.0.0",
+  "description": "### 프로젝트 목표 - HTML, CSS, Javascript 활용도 키우기 - JEST 개념 이해 및 적용해보기",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shyunju7/mini-game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shyunju7/mini-game/issues"
+  },
+  "homepage": "https://github.com/shyunju7/mini-game#readme",
+  "dependencies": {
+    "jest": "^29.6.2"
+  }
+}
