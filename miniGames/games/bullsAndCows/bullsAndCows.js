@@ -90,19 +90,3 @@ document.addEventListener("keyup", function (e) {
 window.addEventListener("load", function () {
   handleStartGame();
 });
-
-/*
-
-리팩토링
-- 전역변수 줄이기(줄일 수 있으면) 
-- 게임시작하는 함수(버튼을 누르거나 키를 눌렀을 때) 수정
-- innerHTML 추가하는 부분 createElement() / appendChild()
-// div -> label
-// 히스토리에 붙이면 돼
-
-
-// 테스트코드 짜기
-
-
-
-*/
