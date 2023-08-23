@@ -20,8 +20,6 @@ function handleStartGame() {
     answer[idx] = current;
     idx += 1;
   }
-
-  console.log(answer);
 }
 
 function handleRemoveNumber() {
@@ -44,46 +42,40 @@ function handleCountResult() {
     else cnt[1]++;
   }
 
-  console.log(cnt);
   return cnt;
 }
 
-function handlePickedNum(e) {
-  const {
-    target: { textContent },
-  } = e;
-
-  if (pickedNumbers.includes(textContent)) return;
-  pickedNumbers.push(textContent);
-  inputs[index++].value = textContent;
+function handlePickedNum(num) {
+  if (pickedNumbers.includes(num)) return;
+  inputs[index++].value = num;
+  pickedNumbers.push(num);
 
   if (pickedNumbers.length === 3) {
     const [s, b] = handleCountResult();
-    historyList.innerHTML += `<div>${pickedNumbers[0]} ${pickedNumbers[1]} ${pickedNumbers[2]} ${s}s ${b}b</div>`;
-    pickedNumbers = [];
-    index = 0;
-    playCnt += 1;
-    handleRemoveInput();
+
+    setTimeout(() => {
+      historyList.innerHTML += `<div>${pickedNumbers[0]} ${pickedNumbers[1]} ${pickedNumbers[2]} ${s}s ${b}b</div>`;
+      pickedNumbers = [];
+      index = 0;
+      playCnt += 1;
+      handleRemoveInput();
+    }, 300);
+
     return;
   }
 }
 for (let button of buttons) {
-  button.addEventListener("click", handlePickedNum);
+  button.addEventListener("click", function (e) {
+    const { textContent } = e.target;
+    handlePickedNum(textContent);
+  });
 }
 
 document.addEventListener("keyup", function (e) {
   const pattern = /[0-9]/;
-  if (pattern.test(e.key)) {
-    if (pickedNumbers.includes(e.key)) return;
-    pickedNumbers.push(e.key);
-    inputs[index++].value = e.key;
-    if (pickedNumbers.length === 3) {
-      historyList.innerHTML += `<div>${pickedNumbers[0]} ${pickedNumbers[1]} ${pickedNumbers[2]}</div>`;
-      pickedNumbers = [];
-      index = 0;
-      handleRemoveInput();
-      return;
-    }
+  const { key } = e;
+  if (pattern.test(key)) {
+    handlePickedNum(key);
   }
 });
 
