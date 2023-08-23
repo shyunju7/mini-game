@@ -7,7 +7,6 @@
   align-items: center;
   width: 70%;
   height: 100vh;
-  background-color: palegoldenrod;
 }
 
 #history-list {
@@ -17,7 +16,45 @@
   width: 30%;
 }
 
+#input-numbers {
+  margin-top: 1rem;
+}
+
+#keypad {
+  margin-top: 2rem;
+}
+
 button {
+  outline: none;
   width: 72px;
   height: 72px;
+  border: none;
+  margin: 4px;
+  cursor: pointer;
+  font-size: 1.15em;
+}
+
+button:hover {
+  color: white;
+  background-color: black;
+}
+
+#start-btn {
+  font-size: 1em;
+}
+
+#remove-btn {
+  font-size: 1em;
+}
+
+input {
+  width: 30px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  line-height: 100px;
+  padding-left: 20px;
+  margin: 0 8px;
+  border: none;
+  background-color: #f4f4f4;
 }
