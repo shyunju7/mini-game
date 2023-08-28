@@ -96,6 +96,9 @@ for (let button of buttons) {
 document.addEventListener("keyup", function (e) {
   const pattern = /[0-9]/;
   const { key } = e;
+
+  if(key === "Backspace") handleRemoveNumber();
+
   if (pattern.test(key)) {
     handlePickedNum(key);
   }
