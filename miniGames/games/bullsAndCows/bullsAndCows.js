@@ -13,7 +13,6 @@ const answer = Array(3);
 
 function handleStartGame() {
   let idx = 0;
-
   while (idx !== 3) {
     let current = Math.floor(Math.random() * 10); // 0 - 9
     if (answer.indexOf(current) !== -1) continue;
@@ -41,7 +40,6 @@ function handleCountResult() {
     if (answer[i] === +pickedNumbers[i]) cnt[0]++;
     else cnt[1]++;
   }
-
   return cnt;
 }
 
@@ -54,7 +52,20 @@ function handlePickedNum(num) {
     const [s, b] = handleCountResult();
 
     setTimeout(() => {
-      historyList.innerHTML += `<div>${pickedNumbers[0]} ${pickedNumbers[1]} ${pickedNumbers[2]} ${s}s ${b}b</div>`;
+
+    historyList.innerHTML += `<tr class='history-item'>
+                            <td>${pickedNumbers[0]}</td>
+                            <td>${pickedNumbers[1]}</td>
+                            <td>${pickedNumbers[2]}</td> 
+                            <td>${s}s</td>
+                            <td>${b}b</td>
+                        </tr>`;
+      // historyList.innerHTML += `<div class='history-item'>
+      //                               <label>${pickedNumbers[0]}</label>
+      //                               <label>${pickedNumbers[1]}</label>
+      //                               <label>${pickedNumbers[2]}</label> 
+      //                               <label>${s}s ${b}b</label>
+      //                           </div>`;
       pickedNumbers = [];
       index = 0;
       playCnt += 1;

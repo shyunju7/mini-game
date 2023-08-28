@@ -9,7 +9,7 @@
   height: 100vh;
 }
 
-#history-list {
+#history-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,4 +57,31 @@ input {
   margin: 0 8px;
   border: none;
   background-color: #f4f4f4;
+}
+
+#history-wrapper {
+  background-color: #f4f4f4;
+}
+
+.history-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 4px;
+  font-size: 1.2em;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

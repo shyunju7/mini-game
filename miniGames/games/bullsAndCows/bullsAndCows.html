@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./bullAndCows.css" rel="stylesheet" type="text/css" />
-    <title>bullsAndCows</title>
-  </head>
-  <body>
-    <div id="container">
-      <div id="left-container">
-        <h2>숫자야구</h2>
-        <div id="input-numbers">
-          <input id="first-number" type="number" readonly />
-          <input id="second-number" type="number" readonly />
-          <input id="third-number" type="number" readonly />
-        </div>
-        <div id="keypad">
-          <div>
-            <button class="num-btn">1</button>
-            <button class="num-btn">2</button>
-            <button class="num-btn">3</button>
-          </div>
-          <div>
-            <button class="num-btn">4</button>
-            <button class="num-btn">5</button>
-            <button class="num-btn">6</button>
-          </div>
-          <div>
-            <button class="num-btn">7</button>
-            <button class="num-btn">8</button>
-            <button class="num-btn">9</button>
-          </div>
-          <div>
-            <button id="start-btn" onclick="handleStartGame()">새게임</button>
-            <button class="num-btn">0</button>
-            <button id="remove-btn" onclick="handleRemoveNumber()">
-              지우기
-            </button>
-          </div>
-        </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="./bullAndCows.css" rel="stylesheet" type="text/css" />
+  <title>bullsAndCows</title>
+</head>
+
+<body>
+  <div id="container">
+    <div id="left-container">
+      <h1 class="page-title"><em>숫자야구</em></h1>
+      <div id="input-numbers">
+        <input id="first-number" type="number" readonly />
+        <input id="second-number" type="number" readonly />
+        <input id="third-number" type="number" readonly />
       </div>
-      <div id="history-list">
-        <h4>히스토리</h4>
+      <div id="keypad">
+        <div>
+          <button class="num-btn">1</button>
+          <button class="num-btn">2</button>
+          <button class="num-btn">3</button>
+        </div>
+        <div>
+          <button class="num-btn">4</button>
+          <button class="num-btn">5</button>
+          <button class="num-btn">6</button>
+        </div>
+        <div>
+          <button class="num-btn">7</button>
+          <button class="num-btn">8</button>
+          <button class="num-btn">9</button>
+        </div>
+        <div>
+          <button id="start-btn" onclick="handleStartGame()">새게임</button>
+          <button class="num-btn">0</button>
+          <button id="remove-btn" onclick="handleRemoveNumber()">
+            지우기
+          </button>
+        </div>
       </div>
     </div>
-    <script src="./bullsAndCows.js"></script>
-  </body>
+    <div id="history-wrapper">
+      <h2>히스토리</h2>
+      <table id="history-list">
+
+      </table>
+    </div>
+  </div>
+  <script src="./bullsAndCows.js"></script>
+</body>
+
 </html>
