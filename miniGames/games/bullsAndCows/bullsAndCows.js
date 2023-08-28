@@ -62,6 +62,13 @@ function handlePickedNum(num) {
 
   if (pickedNumbers.length === 3) {
     const [s, b] = handleCountResult();
+
+    if(s === 3) {
+      alert(`${playCnt}번만에 맞췄습니다:P`);
+      handleStartGame();
+      return;
+    }
+
     setTimeout(() => {
     historyList.innerHTML += `<tr class='history-item'>
                             <td>${pickedNumbers[0]}</td>
