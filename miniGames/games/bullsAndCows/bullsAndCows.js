@@ -1,10 +1,8 @@
 const buttons = document.querySelectorAll(".num-btn");
 const historyList = document.querySelector("#history-list");
-
 const firstNum = document.querySelector("#first-number");
 const secondNum = document.querySelector("#second-number");
 const thirdNum = document.querySelector("#third-number");
-
 const inputs = [firstNum, secondNum, thirdNum];
 let index = 0;
 let playCnt = 0;
@@ -12,6 +10,9 @@ let pickedNumbers = [];
 const answer = Array(3);
 
 function handleStartGame() {
+  if(answer[0] !== undefined) {
+    handleRestGame();
+  }
   let idx = 0;
   while (idx !== 3) {
     let current = Math.floor(Math.random() * 10); // 0 - 9
@@ -43,16 +44,25 @@ function handleCountResult() {
   return cnt;
 }
 
+function handleRestGame() {
+  for(let i = 0; i < index; i++) {
+    inputs[i].value = "";
+  }
+
+  index = 0;
+  playCnt = 0;
+  pickedNumbers = [];
+  historyList.innerHTML = "";
+}
+
 function handlePickedNum(num) {
-  if (pickedNumbers.includes(num)) return;
+  if (pickedNumbers.includes(num) || index === 3) return;
   inputs[index++].value = num;
   pickedNumbers.push(num);
 
   if (pickedNumbers.length === 3) {
     const [s, b] = handleCountResult();
-
     setTimeout(() => {
-
     historyList.innerHTML += `<tr class='history-item'>
                             <td>${pickedNumbers[0]}</td>
                             <td>${pickedNumbers[1]}</td>
@@ -60,12 +70,6 @@ function handlePickedNum(num) {
                             <td>${s}s</td>
                             <td>${b}b</td>
                         </tr>`;
-      // historyList.innerHTML += `<div class='history-item'>
-      //                               <label>${pickedNumbers[0]}</label>
-      //                               <label>${pickedNumbers[1]}</label>
-      //                               <label>${pickedNumbers[2]}</label> 
-      //                               <label>${s}s ${b}b</label>
-      //                           </div>`;
       pickedNumbers = [];
       index = 0;
       playCnt += 1;
