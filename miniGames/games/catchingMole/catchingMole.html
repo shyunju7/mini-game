@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./catchingMole.css" rel="stylesheet" type="text/css" />
+    <title>두더지 잡기</title>
+  </head>
+  <body>
+    <h1>두더지 잡기</h1>
+    <div>
+      TIME : <label id="time-label">60</label>
+      <label>
+        SCORE :
+        <label id="score-label">0</label>
+      </label>
+    </div>
+    <div id="game-board">
+      <div class="cell">
+        <div class="mole hidden">1</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">2</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">3</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">4</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">5</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">6</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">7</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">8</div>
+      </div>
+      <div class="cell">
+        <div class="mole hidden">9</div>
+      </div>
+    </div>
+    <button id="start-button" onclick="handleOnClickStartButton()">시작</button>
+    <script src="./catchingMole.js"></script>
+  </body>
+</html>

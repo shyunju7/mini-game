@@ -1,0 +1,55 @@
+#game-board {
+  display: grid;
+  grid-template-rows: 200px 200px 200px;
+  grid-template-columns: 200px 200px 200px;
+}
+
+#time-label {
+  font-size: 2em;
+}
+
+.cell {
+  position: relative;
+  background-image: url("../../assets/images/bg-board.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #835c32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  overflow: hidden;
+}
+
+.mole {
+  position: absolute;
+  bottom: 20px;
+  width: 160px;
+  height: 160px;
+  background-image: url("../../assets/images/img-mole.png");
+  background-position: 0px 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: bottom 1s;
+}
+
+.dead {
+  width: 160px;
+  height: 160px;
+  background-image: url("../../assets/images/img-mole-dead.png");
+  background-position: 0px 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.hidden {
+  bottom: -160px;
+}
+
+#start-button {
+  width: 600px;
+  height: 80px;
+  outline: none;
+  border: none;
+}
