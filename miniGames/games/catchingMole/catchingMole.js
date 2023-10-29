@@ -14,6 +14,14 @@ for (let i = 0; i < 9; i++) {
   });
 }
 
+function handleReset() {
+  prevIndex = -1;
+  score = 0;
+  randomValue = -1;
+  timeLabel.textContent = "60";
+  scoreLabel.textContent = "0";
+}
+
 function calculateScore() {
   score += randomValue < 1000 ? randomValue * 2 : Math.floor(randomValue / 10);
 }
@@ -28,18 +36,19 @@ function handleCatchMole(index) {
 
   setTimeout(function () {
     classList.remove("dead");
-  }, 1000);
+  }, 500);
 }
 
 function handleOnClickStartButton() {
   if (isStartGame) return;
+  handleReset();
   isStartGame = true;
   handleStartTimer();
 }
 
 function handleStartTimer() {
   handleJumpMole();
-  let timer = 10;
+  let timer = 60;
   let interval = setInterval(function () {
     timer -= 1;
     timeLabel.textContent = timer;
@@ -69,7 +78,7 @@ function handleShowMole(index) {
 
 function handleJumpMole() {
   if (!isStartGame) return;
-  let _randomTime = Math.floor(Math.random() * 1001 + 500);
+  let _randomTime = Math.floor(Math.random() * 1001 + 550);
   randomValue = _randomTime;
   let moleIndex = handleRandomMole();
   handleShowMole(moleIndex);
